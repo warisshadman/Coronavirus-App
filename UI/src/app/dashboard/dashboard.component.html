@@ -1,0 +1,72 @@
+<div class="main-container">
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-xl-12">
+      <div class="text-center">
+        <div class="blinking-circle" style="display: inline-flex;">
+          <svg height="25" width="25" class="blinking">
+            <circle cx="12.5" cy="12.5" r=6 fill="#2dc58b" />
+          </svg>
+        </div>
+        <h4 style="color: #2dc58b; font-weight: 500; display: inline-flex;">
+          Follow WHO for live coverage</h4>
+      </div>
+      <div class="text-center">
+        <div>
+          <h1 style="font-size: 48px; font-weight: bolder; line-height: 48px;">Tracking Covid-19 cases in the
+            {{statename}}
+          </h1>
+          <p style="font-size: 24px; font-weight: 200; line-height: 30px;">Since January, novel coronavirus has spread
+            to <br>nearly every state and district
+          </p>
+
+        </div>
+      </div>
+      <div style="width: 10%; margin: 0 auto;">
+        <mat-select placeholder="-- Select State --" (selectionChange)="selected($event)">
+          <mat-option *ngFor="let t of stateList" [value]="t.abbreviation">
+            {{t.name}}
+          </mat-option>
+        </mat-select>
+      </div>
+      <div style="padding: 5% 10%;margin: 0 auto;">
+        <div class="row">
+          <div class="col-md-3">
+            <span style="font-weight: 300; font-size: 16px;">Confirmed</span>
+            <h1 style="font-size: 30px; font-weight: 500;color: #2dc58b">{{totalConfirmedCase}}</h1>
+          </div>
+          <div class="col-md-3">
+            <span style="font-weight: 300; font-size: 16px;">Deceased</span>
+            <h1 style="font-size: 30px; font-weight: 500;">{{totalDeceasedCase}}</h1>
+          </div>
+          <div class="col-md-3">
+            <span style="font-weight: 300; font-size: 16px;">Recovered</span>
+            <h1 style="font-size: 30px; font-weight: 500;">{{totalRecoveredCase}}</h1>
+          </div>
+          <div class="col-md-3">
+            <span style="font-weight: 300; font-size: 16px;">Tested</span>
+            <h1 style="font-size: 30px; font-weight: 500;">{{totalTestedCase}}</h1>
+          </div>
+        </div>
+      </div>
+      <div style="padding: 3% 15%;margin: 0 auto;">
+        <h2 class="font-size: 20px; font-weight: 600">Reported cases and deaths</h2>
+        <p style="font-size: 14px">The figure are based on data from the <span
+            style="color: #2dc58b; font-weight: 500;">The Ministry of
+            Health
+            and Family Welfare</span>. These numbers are
+          updated every 15 minutes but may differ from other sources due to difference in reporting times. For
+          up-to-the-minutes update.
+          <span style="color: #2dc58b; font-weight: 500;">Follow our live coverage.</span>
+        </p>
+        <div style="display: flex; flex-direction: row">
+          <div style=" overflow: hidden; flex-grow: 1">
+            <ag-grid-angular style="width: 100%;height: 100%;" [domLayout]="domLayout" [defaultColDef]="defaultColDef"
+              [gridOptions]="gridOptions" class="ag-theme-alpine" [rowData]="rowData" [columnDefs]="columnDefs">
+            </ag-grid-angular>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

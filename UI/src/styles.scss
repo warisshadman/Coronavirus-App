@@ -1,0 +1,69 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/ag-grid-community/src/styles/ag-grid.scss";
+@import "../node_modules/ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin.scss";
+
+.ag-theme-alpine {
+  @include ag-theme-alpine();
+}
+
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.main-container {
+  width: 70%;
+  margin: 5% auto;
+}
+
+.corona-header {
+  padding: 0px 0px;
+  border-bottom: 1px solid #e6e6e6;
+
+}
+
+.corona-header-nav {
+  margin: 0% auto;
+  width: 70%;
+}
+
+.state-logo {
+  width: 45px;
+  height: 45px;
+  background-color: #28df99;
+}
+
+.state-logo-text {
+  font-size: 30px;
+  padding: 12px 0px;
+  font-weight: bolder;
+  color: #ffffff;
+}
+
+
+.flex-container {
+  display: flex;
+}
+
+.blinking-circle {
+  display: inline-flex;
+  position: relative;
+  top: 8px;
+  right: 10px;
+}
+
+.ag-center-cols-container {
+  width: 100% !important;
+}
+
+.ag-theme-material .ag-cell.district-table {
+  line-height: 25px !important;
+}
